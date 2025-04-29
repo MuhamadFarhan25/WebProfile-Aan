@@ -1,0 +1,295 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #a1e3f6, #7bdcb5);
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #dbdbdb; /* Soft white */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sedikit bayangan */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333; /* Ganti dari #000 ke #333 */
+    font-weight: 500;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #204ecf;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #204ecf;
+    transition: width 0.3s;
+}
+
+nav a:hover {
+    color: #204ecf;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 10%;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text .welcome {
+    color: #3366cc;
+    font-size: 16px;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    margin: 15px 0;
+    color: #222;
+}
+
+.hero-text .name {
+    color: #204ecf;
+}
+
+.hero-text .role {
+    font-weight: bold;
+}
+
+.hero-text .desc {
+    color: #444;
+    margin: 15px 0 25px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn.primary {
+    background-color: #204ecf;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn.primary:hover {
+    background-color: #103bb2;
+}
+
+.btn.outline {
+    border: 2px solid #204ecf;
+    color: #204ecf;
+}
+
+.btn.outline:hover {
+    background-color: #204ecf;
+    color: #fff;
+}
+
+/* Hero Image */
+.hero-image {
+    position: relative;
+    max-width: 350px;
+}
+
+.hero-image .img-bg {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: #4ea8de;
+    border-radius: 20px 0 0 20px;
+    z-index: 0;
+}
+
+.hero-image img {
+    position: relative;
+    width: 100%;
+    border-radius: 20px 0 0 20px;
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+
+/* Animasi muncul */
+.hero-text,
+.hero-image {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+.hero-text.show,
+.hero-image.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tombol mengambang seperti animasi slide */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.content {
+    padding: 60px 10%;
+    background-color: #fff;
+}
+
+.content h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #204ecf;
+}
+
+
+/* Contact Form */
+.Contact-info {
+    font-size: 18px;
+    color: #444;
+    background-color: #dbdbdb; /* Ganti dengan warna navbar Anda */
+    padding: 20px;
+    border-radius: 8px; /* Opsional: untuk memberikan efek sudut melengkung */
+}
+
+.Contact-info a {
+    color: #204ecf;
+    text-decoration: none;
+}
+
+.Contact-info a:hover {
+    text-decoration: underline;
+}
+
+.card-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 300px;              /* Sesuaikan lebar card */
+    height: 100%;              /* Tinggi fleksibel */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .card-img-top {
+    height: 150px;             /* Tinggi gambar dibatasi */
+    object-fit: cover;         /* Agar gambar tidak terdistorsi */
+  }
+  
+  .card-body {
+    background-color: #1c1e21;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+  
+  .card-text {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+  
+  .card-footer {
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 1rem;
+    color: #bbb;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+  }
+  
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }  
